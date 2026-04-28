@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== COLORFUL DOODLE BACKGROUND ===== */
+/* ===== COLORFUL BACKGROUND ===== */
 body::before {
   content: "";
   position: fixed;
@@ -95,7 +95,7 @@ body::after {
   display: inline-block;
 }
 
-/* ===== CARDS (kept simple, no shadows) ===== */
+/* ===== CARDS ===== */
 .card {
   margin: 30px auto;
   max-width: 520px;
@@ -110,7 +110,52 @@ body::after {
   transform: rotate(-0.8deg);
 }
 
-/* ===== STAMP (SIMPLIFIED, NO EFFECTS) ===== */
+/* ===== NOTE (UPGRADED HANDWRITTEN BLOCK) ===== */
+.note {
+  margin: 45px auto;
+  max-width: 520px;
+  padding: 18px 22px;
+
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+
+  background: #fffdf7;
+  border: 2px dashed #000;
+
+  transform: rotate(-1.2deg);
+
+  position: relative;
+}
+
+/* soft colorful ink wash behind note */
+.note::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+
+  background:
+    linear-gradient(120deg,
+      rgba(255,0,0,0.12),
+      rgba(255,165,0,0.10),
+      rgba(0,255,0,0.10),
+      rgba(0,0,255,0.10),
+      rgba(255,0,255,0.10)
+    );
+
+  transform: rotate(1deg);
+}
+
+/* quote attribution styling */
+.note span {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* ===== STAMP ===== */
 .stamp {
   display: inline-block;
   margin-top: 25px;
@@ -137,7 +182,7 @@ a {
   position: relative;
 }
 
-/* subtle marker underline only */
+/* marker underline */
 a::after {
   content: "";
   position: absolute;
@@ -176,7 +221,7 @@ a:hover::after {
 in the hilltowns of western mass
 </div>
 
-<!-- PRICE (UPDATED TEXT) -->
+<!-- PRICE -->
 <div class="price-box">
 💲10 A PENDANT<br>
 OR<br>
@@ -190,14 +235,16 @@ NO TWO EVER THE SAME
 
 <div class="card">
 ❤️Fun ಄ Affordable ☼ Handmade 🚀<br>
-  ⋆｡°✩ ALWAYS ✩°⋆｡
+⋆｡°✩ ALWAYS ✩°⋆｡
 </div>
 
+<!-- NOTE -->
 <div class="note">
-"Pursue the authentic— decide first<br>
-  what is authentic,<br>
-  then go after it with all your heart"<br>
-  -Louise Erdrich, from "Advice To Myself"
+“Pursue the authentic— decide first<br>
+what is authentic,<br>
+then go after it with all your heart”<br><br>
+
+<span>— Louise Erdrich, “Advice To Myself”</span>
 </div>
 
 <!-- STAMP -->
