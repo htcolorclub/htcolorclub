@@ -25,7 +25,7 @@ body {
   background: #ffffff;
 }
 
-/* ===== HANDMADE DOODLE BACKGROUND ===== */
+/* ===== HANDMADE BACKGROUND ===== */
 body::before {
   content: "";
   position: fixed;
@@ -40,13 +40,12 @@ body::before {
     radial-gradient(circle at 50% 50%, rgba(255,0,255,0.06), transparent 40%);
 }
 
-/* scribble lines layer */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -4;
-  opacity: 0.25;
+  opacity: 0.2;
 
   background-image:
     repeating-linear-gradient(
@@ -64,8 +63,6 @@ body::after {
   width: 90%;
   margin-bottom: 20px;
   transform: rotate(-1.5deg);
-  position: relative;
-  z-index: 2;
 }
 
 /* ===== TITLE ===== */
@@ -73,8 +70,6 @@ body::after {
   font-size: 48px;
   margin: 10px 0 40px 0;
   line-height: 1.2;
-  position: relative;
-  z-index: 2;
 }
 
 /* rainbow letters */
@@ -85,7 +80,7 @@ body::after {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* ===== PRICE HERO ===== */
+/* ===== PRICE ===== */
 .price-box {
   margin: 40px auto;
   max-width: 520px;
@@ -100,8 +95,6 @@ body::after {
   display: inline-block;
 
   box-shadow: 6px 6px 0px #000;
-  position: relative;
-  z-index: 2;
 }
 
 /* ===== CARDS ===== */
@@ -114,25 +107,56 @@ body::after {
   box-shadow: 4px 4px 0px #000;
   transform: rotate(0.8deg);
   font-size: 24px;
-  position: relative;
-  z-index: 2;
 }
 
 .card:nth-of-type(even) {
   transform: rotate(-1deg);
 }
 
-/* ===== STAMP ===== */
+/* ===== STAMP (FIXED + ANIMATED) ===== */
 .stamp {
   display: inline-block;
   margin-top: 25px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   border: 2px solid #000;
   transform: rotate(-3deg);
   font-size: 20px;
   background: #fff;
+  white-space: nowrap; /* 🔥 prevents emoji line break */
+  letter-spacing: 0.5px;
+
   position: relative;
-  z-index: 2;
+
+  /* stamp press animation */
+  animation: stampIn 0.5s ease-out;
+}
+
+/* subtle wobble after stamping */
+.stamp:hover {
+  animation: wobble 0.4s ease-in-out;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes stampIn {
+  0% {
+    transform: scale(0.8) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05) rotate(-3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-3deg);
+  }
+}
+
+@keyframes wobble {
+  0% { transform: rotate(-3deg) translateX(0); }
+  25% { transform: rotate(-2deg) translateX(-2px); }
+  50% { transform: rotate(-4deg) translateX(2px); }
+  75% { transform: rotate(-2deg) translateX(-1px); }
+  100% { transform: rotate(-3deg) translateX(0); }
 }
 
 /* ===== SMALL TEXT ===== */
@@ -141,8 +165,6 @@ body::after {
   font-size: 24px;
   line-height: 1.5;
   transform: rotate(-0.5deg);
-  position: relative;
-  z-index: 2;
 }
 
 /* ===== EMAIL ===== */
@@ -151,10 +173,8 @@ a {
   color: blue;
   text-decoration: none;
   position: relative;
-  z-index: 2;
 }
 
-/* marker hover underline */
 a::after {
   content: "";
   position: absolute;
@@ -197,16 +217,16 @@ in the hilltowns of western mass
 <div class="price-box">
 💲10 A PENDANT<br>
 OR<br>
-THREE FOR 💲25
+3 FOR 💲25
 </div>
 
-<!-- INFO -->
+<!-- CARDS -->
 <div class="card">
 NO TWO EVER THE SAME
 </div>
 
 <div class="card">
-❤️FUN • AFFORDABLE • HANDMADE • ALWAYS❤️
+FUN • AFFORDABLE • HANDMADE • ALWAYS • ❤️
 </div>
 
 <!-- STAMP -->
