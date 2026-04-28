@@ -30,12 +30,19 @@ body {
   font-size: 28px;
   opacity: 0.9;
   pointer-events: none;
+  animation: floaty 6s ease-in-out infinite;
 }
 
-.d1 { top: 40px; left: 30px; }
-.d2 { top: 120px; right: 60px; }
-.d3 { bottom: 80px; left: 80px; }
-.d4 { bottom: 140px; right: 120px; }
+.d1 { top: 40px; left: 10%; animation-duration: 7s; }
+.d2 { top: 120px; right: 12%; animation-duration: 5.5s; }
+.d3 { bottom: 90px; left: 20%; animation-duration: 6.5s; }
+.d4 { bottom: 140px; right: 18%; animation-duration: 8s; }
+
+@keyframes floaty {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  50%  { transform: translate(10px, -12px) rotate(4deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
 
 /* LOGO */
 .logo {
@@ -43,11 +50,6 @@ body {
   width: 90%;
   margin-bottom: 20px;
   transform: rotate(-1.5deg);
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: rotate(1deg) scale(1.03);
 }
 
 /* TITLE */
@@ -55,10 +57,9 @@ body {
   font-size: 48px;
   margin: 10px 0 40px 0;
   line-height: 1.2;
-  transform: rotate(0.3deg);
 }
 
-/* RAINBOW TITLE */
+/* RAINBOW LETTERING */
 .title span:nth-child(6n+1) { color: red; }
 .title span:nth-child(6n+2) { color: orange; }
 .title span:nth-child(6n+3) { color: gold; }
@@ -66,38 +67,30 @@ body {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* BOX */
-.box {
-  margin: 30px auto;
-  padding: 22px;
-  border: 2px dashed #000;
-  display: inline-block;
-  font-size: 26px;
-  transform: rotate(-1deg);
+/* HERO PRICE BOX */
+.price-box {
+  margin: 40px auto;
+  max-width: 520px;
+  padding: 30px 25px;
+  font-size: 34px;
+  line-height: 1.4;
+
+  border: 3px solid #000;
   background: #fffdf7;
+
+  transform: rotate(-1.5deg);
+  display: inline-block;
+
+  box-shadow: 6px 6px 0px #000;
 }
 
-/* SECTIONS */
+/* SECTION TEXT */
 .section {
   margin: 30px auto;
   max-width: 650px;
   font-size: 28px;
   line-height: 1.5;
   transform: rotate(0.7deg);
-}
-
-/* BOTTOM TEXT */
-.small {
-  margin-top: 40px;
-  font-size: 24px;
-  line-height: 1.5;
-  transform: rotate(-0.5deg);
-}
-
-/* HIGHLIGHT STYLE */
-.highlight {
-  background: #fff36d;
-  padding: 2px 6px;
 }
 
 /* STAMP */
@@ -109,6 +102,14 @@ body {
   transform: rotate(-3deg);
   font-size: 20px;
   background: #fff;
+}
+
+/* SMALL TEXT */
+.small {
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 1.5;
+  transform: rotate(-0.5deg);
 }
 
 /* EMAIL */
@@ -137,7 +138,7 @@ a {
 <div class="title">
 <span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
 &nbsp;
-<span>w</span><span>i</span><span>t</span><span>h</span>
+<span>w</span><span>w</span><span>i</span><span>t</span><span>h</span>
 &nbsp;
 <span>b</span><span>r</span><span>i</span><span>g</span><span>h</span><span>t</span><span>e</span><span>s</span><span>t</span>
 &nbsp;
@@ -146,24 +147,24 @@ a {
 in the hilltowns of western mass
 </div>
 
-<!-- BOX -->
-<div class="box">
-<span class="highlight">FUN • AFFORDABLE • HANDMADE • ALWAYS • ❤️</span>
+<!-- HERO PRICE -->
+<div class="price-box">
+💲10 A PENDANT<br>
+OR<br>
+3 FOR 💲25
 </div>
 
-<!-- PRICING -->
+<!-- INFO -->
 <div class="section">
-💲10 a pendant or three for 💲25<br>
-!NO TWO EVER THE SAME!
+NO TWO EVER THE SAME
 </div>
 
-<!-- STAMP -->
 <div class="stamp">
-NO HAGGLING PLEASE, I'M SHY!
+❤️ FUN • AFFORDABLE • HANDMADE • ALWAYS ❤️
 </div>
 
-<!-- SMALL TEXT -->
 <div class="small">
+no haggling please, I'm shy!<br>
 gift boxes available free of charge
 </div>
 
