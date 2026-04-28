@@ -15,29 +15,50 @@
 
 body {
   margin: 0;
-  padding: 50px;
+  padding: 60px 40px;
   background: #ffffff;
   font-family: 'Cml', sans-serif;
   text-align: center;
   color: #111;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* LOGO BIGGER */
+/* FLOATING DOODLES */
+.doodle {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.d1 { top: 40px; left: 30px; }
+.d2 { top: 120px; right: 60px; }
+.d3 { bottom: 80px; left: 80px; }
+.d4 { bottom: 140px; right: 120px; }
+
+/* LOGO */
 .logo {
   max-width: 420px;
   width: 90%;
   margin-bottom: 20px;
-  transform: rotate(-1deg);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease;
 }
 
-/* TITLE BIG + RAINBOW */
+.logo:hover {
+  transform: rotate(1deg) scale(1.03);
+}
+
+/* TITLE */
 .title {
   font-size: 48px;
   margin: 10px 0 40px 0;
   line-height: 1.2;
+  transform: rotate(0.3deg);
 }
 
-/* rainbow effect per character */
+/* RAINBOW TITLE */
 .title span:nth-child(6n+1) { color: red; }
 .title span:nth-child(6n+2) { color: orange; }
 .title span:nth-child(6n+3) { color: gold; }
@@ -45,29 +66,49 @@ body {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* MAIN BOX */
+/* BOX */
 .box {
   margin: 30px auto;
   padding: 22px;
   border: 2px dashed #000;
   display: inline-block;
   font-size: 26px;
-  transform: rotate(0.5deg);
+  transform: rotate(-1deg);
+  background: #fffdf7;
 }
 
-/* SECTION TEXT (FIXED SIZE) */
+/* SECTIONS */
 .section {
   margin: 30px auto;
-  max-width: 600px;
-  font-size: 26px;
+  max-width: 650px;
+  font-size: 28px;
   line-height: 1.5;
+  transform: rotate(0.7deg);
 }
 
-/* BOTTOM TEXT (FIXED READABILITY ISSUE) */
+/* BOTTOM TEXT */
 .small {
-  margin-top: 35px;
-  font-size: 22px;
+  margin-top: 40px;
+  font-size: 24px;
   line-height: 1.5;
+  transform: rotate(-0.5deg);
+}
+
+/* HIGHLIGHT STYLE */
+.highlight {
+  background: #fff36d;
+  padding: 2px 6px;
+}
+
+/* STAMP */
+.stamp {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 14px;
+  border: 2px solid #000;
+  transform: rotate(-3deg);
+  font-size: 20px;
+  background: #fff;
 }
 
 /* EMAIL */
@@ -75,14 +116,24 @@ a {
   font-size: 22px;
   color: blue;
   text-decoration: underline;
+  display: inline-block;
+  margin-top: 30px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- DOODLES -->
+<div class="doodle d1">★</div>
+<div class="doodle d2">✿</div>
+<div class="doodle d3">☁︎</div>
+<div class="doodle d4">✎</div>
+
+<!-- LOGO -->
 <img class="logo" src="htccrainbow.JPG" alt="Hilltown Color Club Logo">
 
+<!-- TITLE -->
 <div class="title">
 <span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
 &nbsp;
@@ -95,25 +146,31 @@ a {
 in the hilltowns of western mass
 </div>
 
+<!-- BOX -->
 <div class="box">
-FUN • AFFORDABLE • HANDMADE • ALWAYS • ❤️
+<span class="highlight">FUN • AFFORDABLE • HANDMADE • ALWAYS • ❤️</span>
 </div>
 
+<!-- PRICING -->
 <div class="section">
-💲10 A PENDANT OR THREE FOR 💲25<br>
-NO TWO EVER THE SAME
+💲10 a pendant or three for 💲25<br>
+!NO TWO EVER THE SAME!
 </div>
 
+<!-- STAMP -->
+<div class="stamp">
+NO HAGGLING PLEASE, I'M SHY!
+</div>
+
+<!-- SMALL TEXT -->
 <div class="small">
-no haggling please, I'm shy!<br>
 gift boxes available free of charge
 </div>
 
-<p>
+<!-- EMAIL -->
 <a href="mailto:hilltowncolorclub@gmail.com">
 hilltowncolorclub@gmail.com
 </a>
-</p>
 
 </body>
 </html>
