@@ -13,7 +13,7 @@
   font-display: swap;
 }
 
-/* ===== PAGE BASE ===== */
+/* ===== BASE ===== */
 body {
   margin: 0;
   padding: 60px 40px;
@@ -25,25 +25,10 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HAND-DRAWN BORDER FRAME ===== */
-.frame {
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  border: 3px dashed #000;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* ===== PAPER LAYERS (uneven collage feel) ===== */
+/* ===== PAPER LAYERS ===== */
 .paper {
   position: fixed;
-  width: 110%;
-  height: 110%;
-  top: -5%;
-  left: -5%;
+  inset: -5%;
   z-index: -3;
 }
 
@@ -66,7 +51,58 @@ body {
   opacity: 0.6;
 }
 
-/* ===== COLORFUL DOODLE LAYER ===== */
+/* ===== RAINBOW HAND-DRAWN FRAME (OPTION 1) ===== */
+.frame {
+  position: fixed;
+  inset: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* rainbow marker outline */
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-image: linear-gradient(
+    45deg,
+    red,
+    orange,
+    gold,
+    green,
+    blue,
+    purple
+  ) 1;
+  transform: rotate(0.4deg);
+  opacity: 0.6;
+}
+
+/* secondary scribble layer */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #ff69b4;
+  transform: rotate(-0.5deg);
+  opacity: 0.35;
+}
+
+/* ===== CORNER DOODLES (OPTION 3) ===== */
+.corner {
+  position: fixed;
+  font-size: 30px;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 11;
+}
+
+.c1 { top: 12px; left: 12px; color: red; }
+.c2 { top: 12px; right: 12px; color: orange; }
+.c3 { bottom: 12px; left: 12px; color: green; }
+.c4 { bottom: 12px; right: 12px; color: blue; }
+
+/* ===== DOODLE FIELD ===== */
 .doodles {
   position: absolute;
   top: 0;
@@ -82,12 +118,12 @@ body {
   opacity: 0.9;
 }
 
-.r  { top: 80px; left: 10%; color: red; }
-.o  { top: 200px; right: 12%; color: orange; }
-.y  { bottom: 140px; left: 18%; color: gold; }
-.g  { top: 320px; right: 20%; color: green; }
-.b  { bottom: 220px; right: 14%; color: blue; }
-.p  { top: 450px; left: 25%; color: purple; }
+.r { top: 80px; left: 10%; color: red; }
+.o { top: 200px; right: 12%; color: orange; }
+.y { bottom: 140px; left: 18%; color: gold; }
+.g { top: 320px; right: 20%; color: green; }
+.b { bottom: 220px; right: 14%; color: blue; }
+.p { top: 450px; left: 25%; color: purple; }
 
 /* ===== LOGO ===== */
 .logo {
@@ -95,8 +131,8 @@ body {
   width: 90%;
   margin-bottom: 20px;
   transform: rotate(-1.5deg);
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
 /* ===== TITLE ===== */
@@ -104,8 +140,8 @@ body {
   font-size: 48px;
   margin: 10px 0 40px 0;
   line-height: 1.2;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
 /* rainbow letters */
@@ -116,7 +152,7 @@ body {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* ===== PRICE HERO CARD ===== */
+/* ===== PRICE HERO ===== */
 .price-box {
   margin: 40px auto;
   max-width: 520px;
@@ -131,11 +167,11 @@ body {
   display: inline-block;
 
   box-shadow: 6px 6px 0px #000;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
-/* ===== STICKER PRODUCT CARDS ===== */
+/* ===== PRODUCT CARDS ===== */
 .card {
   margin: 30px auto;
   max-width: 520px;
@@ -149,7 +185,6 @@ body {
   z-index: 2;
 }
 
-/* slight variation for “handmade mismatch” */
 .card:nth-of-type(even) {
   transform: rotate(-1deg);
 }
@@ -163,8 +198,8 @@ body {
   transform: rotate(-3deg);
   font-size: 20px;
   background: #fff;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
 /* ===== SMALL TEXT ===== */
@@ -173,11 +208,11 @@ body {
   font-size: 24px;
   line-height: 1.5;
   transform: rotate(-0.5deg);
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
-/* ===== EMAIL ===== */
+/* ===== EMAIL + HOVER MARKER UNDERLINE ===== */
 a {
   font-size: 22px;
   color: blue;
@@ -186,19 +221,18 @@ a {
   z-index: 2;
 }
 
-/* animated marker underline */
 a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -4px;
   width: 100%;
   height: 6px;
   background: yellow;
-  z-index: -1;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
+  z-index: -1;
 }
 
 a:hover::after {
@@ -209,13 +243,19 @@ a:hover::after {
 
 <body>
 
+<!-- PAPER BACKGROUND -->
+<div class="paper"></div>
+
 <!-- FRAME -->
 <div class="frame"></div>
 
-<!-- PAPER LAYERS -->
-<div class="paper"></div>
+<!-- CORNER DOODLES -->
+<div class="corner c1">✎</div>
+<div class="corner c2">✿</div>
+<div class="corner c3">★</div>
+<div class="corner c4">☀︎</div>
 
-<!-- DOODLES -->
+<!-- COLOR DOODLES -->
 <div class="doodles">
   <span class="r">★</span>
   <span class="o">✿</span>
@@ -241,14 +281,14 @@ a:hover::after {
 in the hilltowns of western mass
 </div>
 
-<!-- PRICE HERO -->
+<!-- PRICE -->
 <div class="price-box">
 💲10 A PENDANT<br>
 OR<br>
 3 FOR 💲25
 </div>
 
-<!-- PRODUCT CARD STYLE SECTION -->
+<!-- CARDS -->
 <div class="card">
 NO TWO EVER THE SAME
 </div>
