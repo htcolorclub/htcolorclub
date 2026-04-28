@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HANDMADE COLOR FIELD BACKGROUND ===== */
+/* ===== HANDMADE COLOR BACKGROUND ===== */
 body::before {
   content: "";
   position: fixed;
@@ -40,7 +40,6 @@ body::before {
     radial-gradient(circle at 50% 50%, rgba(255,0,255,0.06), transparent 40%);
 }
 
-/* faint scribble layer */
 body::after {
   content: "";
   position: fixed;
@@ -81,7 +80,7 @@ body::after {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* ===== PRICE (ANCHOR OBJECT) ===== */
+/* ===== PRICE ===== */
 .price-box {
   margin: 40px auto;
   max-width: 520px;
@@ -96,50 +95,7 @@ body::after {
   display: inline-block;
 }
 
-/* ===== NOTE (FLOATING SCRAP / PINNED FEEL) ===== */
-.note {
-  margin: -10px auto 50px auto;
-  max-width: 420px;
-
-  font-size: 22px;
-  line-height: 1.6;
-  text-align: left;
-
-  position: relative;
-
-  transform: rotate(2deg) translateX(90px);
-
-  opacity: 0.95;
-}
-
-/* colorful “ink wash behind note” */
-.note::before {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  z-index: -1;
-
-  background: linear-gradient(
-    120deg,
-    rgba(255,0,0,0.12),
-    rgba(255,165,0,0.10),
-    rgba(0,255,0,0.10),
-    rgba(0,0,255,0.10),
-    rgba(255,0,255,0.10)
-  );
-
-  transform: rotate(-1deg);
-}
-
-/* author line */
-.note span {
-  display: block;
-  margin-top: 10px;
-  font-size: 18px;
-  opacity: 0.75;
-}
-
-/* ===== CARDS (slightly “scattered”) ===== */
+/* ===== CARDS ===== */
 .card {
   margin: 35px auto;
   max-width: 520px;
@@ -149,7 +105,6 @@ body::after {
   font-size: 24px;
 }
 
-/* intentional misalignment variations */
 .card:nth-of-type(odd) {
   transform: rotate(0.8deg) translateX(-20px);
 }
@@ -175,6 +130,49 @@ body::after {
   font-size: 24px;
   line-height: 1.5;
   transform: rotate(-0.4deg);
+}
+
+/* ===== NOTE (NOW AT BOTTOM, CLOSING VOICE) ===== */
+.note {
+  margin: 60px auto 30px auto;
+  max-width: 420px;
+
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+
+  position: relative;
+
+  transform: rotate(-1deg);
+
+  opacity: 0.95;
+}
+
+/* colorful ink wash behind note */
+.note::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  z-index: -1;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,0,0,0.12),
+    rgba(255,165,0,0.10),
+    rgba(0,255,0,0.10),
+    rgba(0,0,255,0.10),
+    rgba(255,0,255,0.10)
+  );
+
+  transform: rotate(1deg);
+}
+
+/* attribution */
+.note span {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.75;
 }
 
 /* ===== EMAIL ===== */
@@ -231,15 +229,6 @@ OR<br>
 THREE FOR 💲25
 </div>
 
-<!-- NOTE (NOW MOVED + FLOATING COLLAGE PIECE) -->
-<div class="note">
-“Pursue the authentic— decide first<br>
-what is authentic,<br>
-then go after it with all your heart”<br><br>
-
-<span>— Louise Erdrich, “Advice To Myself”</span>
-</div>
-
 <!-- CARDS -->
 <div class="card">
 NO TWO EVER THE SAME
@@ -258,6 +247,15 @@ NO HAGGLING PLEASE, I'M SHY!
 <!-- SMALL -->
 <div class="small">
 gift boxes available free of charge
+</div>
+
+<!-- NOTE (BOTTOM CLOSING MOMENT) -->
+<div class="note">
+“Pursue the authentic— decide first<br>
+what is authentic,<br>
+then go after it with all your heart”<br><br>
+
+<span>— Louise Erdrich, “Advice To Myself”</span>
 </div>
 
 <!-- EMAIL -->
