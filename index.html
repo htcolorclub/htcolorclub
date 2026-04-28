@@ -18,112 +18,45 @@ body {
   margin: 0;
   padding: 60px 40px;
   font-family: 'Cml', sans-serif;
-  background: #ffffff;
   text-align: center;
   color: #111;
   position: relative;
   overflow-x: hidden;
+  background: #ffffff;
 }
 
-/* ===== PAPER LAYERS ===== */
-.paper {
+/* ===== HANDMADE DOODLE BACKGROUND ===== */
+body::before {
+  content: "";
   position: fixed;
-  inset: -5%;
-  z-index: -3;
-}
-
-.paper::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #fffdf7;
-  transform: rotate(-1.2deg);
-}
-
-.paper::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #f7fbff;
-  transform: rotate(0.8deg);
-  opacity: 0.6;
-}
-
-/* ===== RAINBOW HAND-DRAWN FRAME (OPTION 1) ===== */
-.frame {
-  position: fixed;
-  inset: 14px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* rainbow marker outline */
-.frame::before {
-  content: "";
-  position: absolute;
   inset: 0;
-  border: 3px solid transparent;
-  border-image: linear-gradient(
-    45deg,
-    red,
-    orange,
-    gold,
-    green,
-    blue,
-    purple
-  ) 1;
-  transform: rotate(0.4deg);
-  opacity: 0.6;
+  z-index: -5;
+
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,0,0,0.08), transparent 25%),
+    radial-gradient(circle at 80% 10%, rgba(255,165,0,0.08), transparent 30%),
+    radial-gradient(circle at 30% 70%, rgba(0,128,0,0.08), transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(0,0,255,0.08), transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(255,0,255,0.06), transparent 40%);
 }
 
-/* secondary scribble layer */
-.frame::after {
+/* scribble lines layer */
+body::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px dashed #ff69b4;
-  transform: rotate(-0.5deg);
-  opacity: 0.35;
-}
-
-/* ===== CORNER DOODLES (OPTION 3) ===== */
-.corner {
   position: fixed;
-  font-size: 30px;
-  pointer-events: none;
-  opacity: 0.9;
-  z-index: 11;
+  inset: 0;
+  z-index: -4;
+  opacity: 0.25;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(0,0,0,0.03) 20px,
+      rgba(0,0,0,0.03) 21px
+    );
 }
-
-.c1 { top: 12px; left: 12px; color: red; }
-.c2 { top: 12px; right: 12px; color: orange; }
-.c3 { bottom: 12px; left: 12px; color: green; }
-.c4 { bottom: 12px; right: 12px; color: blue; }
-
-/* ===== DOODLE FIELD ===== */
-.doodles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 28px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.doodles span {
-  position: absolute;
-  opacity: 0.9;
-}
-
-.r { top: 80px; left: 10%; color: red; }
-.o { top: 200px; right: 12%; color: orange; }
-.y { bottom: 140px; left: 18%; color: gold; }
-.g { top: 320px; right: 20%; color: green; }
-.b { bottom: 220px; right: 14%; color: blue; }
-.p { top: 450px; left: 25%; color: purple; }
 
 /* ===== LOGO ===== */
 .logo {
@@ -171,7 +104,7 @@ body {
   z-index: 2;
 }
 
-/* ===== PRODUCT CARDS ===== */
+/* ===== CARDS ===== */
 .card {
   margin: 30px auto;
   max-width: 520px;
@@ -212,7 +145,7 @@ body {
   z-index: 2;
 }
 
-/* ===== EMAIL + HOVER MARKER UNDERLINE ===== */
+/* ===== EMAIL ===== */
 a {
   font-size: 22px;
   color: blue;
@@ -221,6 +154,7 @@ a {
   z-index: 2;
 }
 
+/* marker hover underline */
 a::after {
   content: "";
   position: absolute;
@@ -242,28 +176,6 @@ a:hover::after {
 </head>
 
 <body>
-
-<!-- PAPER BACKGROUND -->
-<div class="paper"></div>
-
-<!-- FRAME -->
-<div class="frame"></div>
-
-<!-- CORNER DOODLES -->
-<div class="corner c1">✎</div>
-<div class="corner c2">✿</div>
-<div class="corner c3">★</div>
-<div class="corner c4">☀︎</div>
-
-<!-- COLOR DOODLES -->
-<div class="doodles">
-  <span class="r">★</span>
-  <span class="o">✿</span>
-  <span class="y">☀︎</span>
-  <span class="g">☁︎</span>
-  <span class="b">✎</span>
-  <span class="p">♡</span>
-</div>
 
 <!-- LOGO -->
 <img class="logo" src="htccrainbowtransparent.png" alt="Hilltown Color Club Logo">
@@ -288,7 +200,7 @@ OR<br>
 3 FOR 💲25
 </div>
 
-<!-- CARDS -->
+<!-- INFO -->
 <div class="card">
 NO TWO EVER THE SAME
 </div>
@@ -302,7 +214,7 @@ FUN • AFFORDABLE • HANDMADE • ALWAYS • ❤️
 NO HAGGLING PLEASE, I'M SHY!
 </div>
 
-<!-- SMALL TEXT -->
+<!-- SMALL -->
 <div class="small">
 gift boxes available free of charge
 </div>
