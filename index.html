@@ -16,7 +16,7 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  padding: 60px 40px;
+  padding: 70px 40px;
   font-family: 'Cml', sans-serif;
   text-align: center;
   color: #111;
@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== COLORFUL BACKGROUND ===== */
+/* ===== HANDMADE COLOR FIELD BACKGROUND ===== */
 body::before {
   content: "";
   position: fixed;
@@ -40,6 +40,7 @@ body::before {
     radial-gradient(circle at 50% 50%, rgba(255,0,255,0.06), transparent 40%);
 }
 
+/* faint scribble layer */
 body::after {
   content: "";
   position: fixed;
@@ -62,7 +63,7 @@ body::after {
   max-width: 420px;
   width: 90%;
   margin-bottom: 20px;
-  transform: rotate(-1.2deg);
+  transform: rotate(-1.3deg);
 }
 
 /* ===== TITLE ===== */
@@ -80,7 +81,7 @@ body::after {
 .title span:nth-child(6n+5) { color: blue; }
 .title span:nth-child(6n+6) { color: purple; }
 
-/* ===== PRICE ===== */
+/* ===== PRICE (ANCHOR OBJECT) ===== */
 .price-box {
   margin: 40px auto;
   max-width: 520px;
@@ -91,74 +92,76 @@ body::after {
   border: 2px solid #000;
   background: #fffdf7;
 
-  transform: rotate(-1.2deg);
+  transform: rotate(-1.5deg) translateX(-10px);
   display: inline-block;
 }
 
-/* ===== CARDS ===== */
-.card {
-  margin: 30px auto;
-  max-width: 520px;
-  padding: 18px;
-  background: #fff;
-  border: 2px solid #000;
-  transform: rotate(0.6deg);
-  font-size: 24px;
-}
-
-.card:nth-of-type(even) {
-  transform: rotate(-0.8deg);
-}
-
-/* ===== NOTE (UPGRADED HANDWRITTEN BLOCK) ===== */
+/* ===== NOTE (FLOATING SCRAP / PINNED FEEL) ===== */
 .note {
-  margin: 45px auto;
-  max-width: 520px;
-  padding: 18px 22px;
+  margin: -10px auto 50px auto;
+  max-width: 420px;
 
   font-size: 22px;
   line-height: 1.6;
   text-align: left;
 
-  background: #fffdf7;
-  border: 2px dashed #000;
-
-  transform: rotate(-1.2deg);
-
   position: relative;
+
+  transform: rotate(2deg) translateX(90px);
+
+  opacity: 0.95;
 }
 
-/* soft colorful ink wash behind note */
+/* colorful “ink wash behind note” */
 .note::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: -10px;
   z-index: -1;
 
-  background:
-    linear-gradient(120deg,
-      rgba(255,0,0,0.12),
-      rgba(255,165,0,0.10),
-      rgba(0,255,0,0.10),
-      rgba(0,0,255,0.10),
-      rgba(255,0,255,0.10)
-    );
+  background: linear-gradient(
+    120deg,
+    rgba(255,0,0,0.12),
+    rgba(255,165,0,0.10),
+    rgba(0,255,0,0.10),
+    rgba(0,0,255,0.10),
+    rgba(255,0,255,0.10)
+  );
 
-  transform: rotate(1deg);
+  transform: rotate(-1deg);
 }
 
-/* quote attribution styling */
+/* author line */
 .note span {
   display: block;
   margin-top: 10px;
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 0.75;
+}
+
+/* ===== CARDS (slightly “scattered”) ===== */
+.card {
+  margin: 35px auto;
+  max-width: 520px;
+  padding: 18px;
+  background: #fff;
+  border: 2px solid #000;
+  font-size: 24px;
+}
+
+/* intentional misalignment variations */
+.card:nth-of-type(odd) {
+  transform: rotate(0.8deg) translateX(-20px);
+}
+
+.card:nth-of-type(even) {
+  transform: rotate(-0.9deg) translateX(25px);
 }
 
 /* ===== STAMP ===== */
 .stamp {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 10px 14px;
   border: 2px solid #000;
   transform: rotate(-2.5deg);
@@ -168,7 +171,7 @@ body::after {
 
 /* ===== SMALL TEXT ===== */
 .small {
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 24px;
   line-height: 1.5;
   transform: rotate(-0.4deg);
@@ -212,7 +215,7 @@ a:hover::after {
 <div class="title">
 <span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
 &nbsp;
-<span>w</span><span>i</span><span>t</span><span>h</span>
+<span>w</span><span>w</span><span>i</span><span>t</span><span>h</span>
 &nbsp;
 <span>b</span><span>r</span><span>i</span><span>g</span><span>h</span><span>t</span><span>e</span><span>s</span><span>t</span>
 &nbsp;
@@ -228,23 +231,23 @@ OR<br>
 THREE FOR 💲25
 </div>
 
-<!-- CARDS -->
-<div class="card">
-NO TWO EVER THE SAME
-</div>
-
-<div class="card">
-❤️Fun ಄ Affordable ☼ Handmade 🚀<br>
-⋆｡°✩ ALWAYS ✩°⋆｡
-</div>
-
-<!-- NOTE -->
+<!-- NOTE (NOW MOVED + FLOATING COLLAGE PIECE) -->
 <div class="note">
 “Pursue the authentic— decide first<br>
 what is authentic,<br>
 then go after it with all your heart”<br><br>
 
 <span>— Louise Erdrich, “Advice To Myself”</span>
+</div>
+
+<!-- CARDS -->
+<div class="card">
+NO TWO EVER THE SAME
+</div>
+
+<div class="card">
+❤️ Fun ಄ Affordable ☼ Handmade 🚀<br>
+⋆｡°✩ ALWAYS ✩°⋆｡
 </div>
 
 <!-- STAMP -->
