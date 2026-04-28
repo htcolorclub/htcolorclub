@@ -15,50 +15,66 @@
 
 body {
   margin: 0;
-  padding: 40px;
-  background: #fff8f0;
+  padding: 50px;
+  background: #ffffff;
   font-family: 'Cml', sans-serif;
   text-align: center;
   color: #111;
 }
 
+/* LOGO BIGGER */
 .logo {
-  max-width: 260px;
-  width: 80%;
+  max-width: 420px;
+  width: 90%;
   margin-bottom: 20px;
   transform: rotate(-1deg);
 }
 
+/* TITLE BIG + RAINBOW */
 .title {
-  font-size: 36px;
-  margin: 10px 0 30px 0;
-  letter-spacing: 1px;
+  font-size: 48px;
+  margin: 10px 0 40px 0;
+  line-height: 1.2;
 }
 
-.section {
-  margin: 25px auto;
-  max-width: 500px;
-  font-size: 20px;
-  line-height: 1.4;
-}
+/* rainbow effect per character */
+.title span:nth-child(6n+1) { color: red; }
+.title span:nth-child(6n+2) { color: orange; }
+.title span:nth-child(6n+3) { color: gold; }
+.title span:nth-child(6n+4) { color: green; }
+.title span:nth-child(6n+5) { color: blue; }
+.title span:nth-child(6n+6) { color: purple; }
 
+/* MAIN BOX */
 .box {
   margin: 30px auto;
-  padding: 18px;
+  padding: 22px;
   border: 2px dashed #000;
   display: inline-block;
+  font-size: 26px;
   transform: rotate(0.5deg);
 }
 
-.fun {
-  margin-top: 25px;
-  font-size: 22px;
-  letter-spacing: 1px;
+/* SECTION TEXT (FIXED SIZE) */
+.section {
+  margin: 30px auto;
+  max-width: 600px;
+  font-size: 26px;
+  line-height: 1.5;
 }
 
+/* BOTTOM TEXT (FIXED READABILITY ISSUE) */
 .small {
-  margin-top: 30px;
-  font-size: 16px;
+  margin-top: 35px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+/* EMAIL */
+a {
+  font-size: 22px;
+  color: blue;
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -68,7 +84,14 @@ body {
 <img class="logo" src="htccrainbow.JPG" alt="Hilltown Color Club Logo">
 
 <div class="title">
-handmade with brightest joy<br>
+<span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
+&nbsp;
+<span>w</span><span>i</span><span>t</span><span>h</span>
+&nbsp;
+<span>b</span><span>r</span><span>i</span><span>g</span><span>h</span><span>t</span><span>e</span><span>s</span><span>t</span>
+&nbsp;
+<span>j</span><span>o</span><span>y</span>
+<br>
 in the hilltowns of western mass
 </div>
 
@@ -85,6 +108,12 @@ NO TWO EVER THE SAME
 no haggling please, I'm shy!<br>
 gift boxes available free of charge
 </div>
+
+<p>
+<a href="mailto:hilltowncolorclub@gmail.com">
+hilltowncolorclub@gmail.com
+</a>
+</p>
 
 </body>
 </html>
