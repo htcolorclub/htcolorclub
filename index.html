@@ -27,7 +27,7 @@ body {
   box-shadow: inset 0 0 120px rgba(0,0,0,0.05);
 }
 
-/* ===== SHARP PENDANT BORDER ===== */
+/* ===== SHARP, ZOOMED-OUT PENDANT BORDER ===== */
 body::before {
   content: "";
   position: fixed;
@@ -35,12 +35,17 @@ body::before {
   z-index: -10;
 
   background-image: url("pendies1.JPG"), url("pendies2.JPG");
-  background-size: cover, cover;
+
+  /* EVEN MORE ZOOMED OUT */
+  background-size: 70%, 70%;
+
   background-position: left top, right bottom;
   background-repeat: no-repeat;
 
   opacity: 1;
-  filter: saturate(1.2);
+
+  /* punchier color */
+  filter: saturate(1.5) contrast(1.1);
 
   /* EDGE-ONLY VISIBILITY */
   -webkit-mask: radial-gradient(
