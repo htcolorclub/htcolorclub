@@ -27,7 +27,7 @@ body {
   box-shadow: inset 0 0 120px rgba(0,0,0,0.05);
 }
 
-/* ===== SHARP, ZOOMED-OUT PENDANT BORDER ===== */
+/* ===== PENDANT BORDER (PULLED WAY BACK, NO BLUR) ===== */
 body::before {
   content: "";
   position: fixed;
@@ -36,18 +36,19 @@ body::before {
 
   background-image: url("pendies1.JPG"), url("pendies2.JPG");
 
-  /* EVEN MORE ZOOMED OUT */
-  background-size: 70%, 70%;
+  /* 🔥 KEY CHANGE: MUCH LESS ZOOM (shows more detail, more repetition feel) */
+  background-size: 40%, 40%;
 
   background-position: left top, right bottom;
   background-repeat: no-repeat;
 
+  /* FULL COLOR, NO WASHOUT */
   opacity: 1;
 
-  /* punchier color */
-  filter: saturate(1.5) contrast(1.1);
+  /* NO FILTERS, NO BLUR */
+  filter: none;
 
-  /* EDGE-ONLY VISIBILITY */
+  /* keep your border cutout */
   -webkit-mask: radial-gradient(
     circle at center,
     transparent 60%,
@@ -130,7 +131,7 @@ body::after {
   transform: rotate(-0.9deg) translateX(25px);
 }
 
-/* ===== GIF STICKER ELEMENT ===== */
+/* ===== GIF STICKER ===== */
 .gif-sticker {
   margin: 60px auto;
   width: 260px;
