@@ -24,11 +24,10 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  /* subtle center focus */
   box-shadow: inset 0 0 120px rgba(0,0,0,0.05);
 }
 
-/* ===== PENDANT BORDER LAYER ===== */
+/* ===== SHARP PENDANT BORDER ===== */
 body::before {
   content: "";
   position: fixed;
@@ -36,13 +35,24 @@ body::before {
   z-index: -10;
 
   background-image: url("pendies1.JPG"), url("pendies2.JPG");
-  background-size: 85%, 85%;
-  background-position: -80px -80px, calc(100% + 80px) calc(100% + 80px);
+  background-size: cover, cover;
+  background-position: left top, right bottom;
   background-repeat: no-repeat;
 
-  /* MORE VISIBLE */
-  opacity: 0.35;
-  filter: blur(4px) saturate(1.4);
+  opacity: 1;
+  filter: saturate(1.2);
+
+  /* EDGE-ONLY VISIBILITY */
+  -webkit-mask: radial-gradient(
+    circle at center,
+    transparent 60%,
+    black 78%
+  );
+  mask: radial-gradient(
+    circle at center,
+    transparent 60%,
+    black 78%
+  );
 }
 
 /* ===== COLOR FIELD BACKGROUND ===== */
