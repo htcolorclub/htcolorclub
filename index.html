@@ -27,36 +27,39 @@ body {
   box-shadow: inset 0 0 120px rgba(0,0,0,0.05);
 }
 
-/* ===== PENDANT BORDER (PULLED WAY BACK, NO BLUR) ===== */
+/* ===== PENDANT BORDER (TRUE PULLED-BACK PATTERN MODE) ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -10;
 
+  /* KEY CHANGE: repeat instead of cover */
   background-image: url("pendies1.JPG"), url("pendies2.JPG");
 
-  /* 🔥 KEY CHANGE: MUCH LESS ZOOM (shows more detail, more repetition feel) */
-  background-size: 40%, 40%;
+  /* MUCH smaller = way more “zoomed out” detail */
+  background-size: 250px, 250px;
 
-  background-position: left top, right bottom;
-  background-repeat: no-repeat;
+  /* repeat creates full border field */
+  background-repeat: repeat;
 
-  /* FULL COLOR, NO WASHOUT */
+  /* shifts patterns so it feels like a surrounding pile */
+  background-position: 0 0, 120px 80px;
+
   opacity: 1;
 
-  /* NO FILTERS, NO BLUR */
+  /* NO blur, NO washout */
   filter: none;
 
-  /* keep your border cutout */
+  /* keep center cutout so it stays a border */
   -webkit-mask: radial-gradient(
     circle at center,
-    transparent 60%,
+    transparent 58%,
     black 78%
   );
   mask: radial-gradient(
     circle at center,
-    transparent 60%,
+    transparent 58%,
     black 78%
   );
 }
@@ -199,10 +202,8 @@ a:hover::after {
 
 <body>
 
-<!-- LOGO -->
 <img class="logo" src="htccrainbowtransparent.png" alt="Hilltown Color Club Logo">
 
-<!-- TITLE -->
 <div class="title">
 <span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
 &nbsp;
@@ -214,37 +215,29 @@ a:hover::after {
 in the hilltowns of western mass
 </div>
 
-<!-- PRICE -->
 <div class="price-box">
 💲10 A PENDANT<br>
 OR<br>
 THREE FOR 💲25
 </div>
 
-<!-- GIF -->
 <img class="gif-sticker" src="idontknowher.gif" alt="decorative gif">
 
-<!-- CARDS -->
-<div class="card">
-NO TWO EVER THE SAME
-</div>
+<div class="card">NO TWO EVER THE SAME</div>
 
 <div class="card">
 ❤️ Fun ಄ Affordable ☼ Handmade 🚀<br>
 ⋆｡°✩ ALWAYS ✩°⋆｡
 </div>
 
-<!-- STAMP -->
 <div class="stamp">
 NO HAGGLING PLEASE, I'M SHY!
 </div>
 
-<!-- SMALL -->
 <div class="small">
 gift boxes available free of charge
 </div>
 
-<!-- EMAIL -->
 <p>
 <a href="mailto:hilltowncolorclub@gmail.com">
 hilltowncolorclub@gmail.com
