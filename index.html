@@ -27,31 +27,31 @@ body {
   box-shadow: inset 0 0 120px rgba(0,0,0,0.05);
 }
 
-/* ===== PENDANT BORDER (TRUE PULLED-BACK PATTERN MODE) ===== */
+/* ===== PENDANT BORDER (BOTH IMAGES, FULL WRAP PATTERN) ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -10;
 
-  /* KEY CHANGE: repeat instead of cover */
-  background-image: url("pendies1.JPG"), url("pendies2.JPG");
+  /* BOTH IMAGES USED AS TILE PATTERN */
+  background-image:
+    url("pendies1.JPG"),
+    url("pendies2.JPG");
 
-  /* MUCH smaller = way more “zoomed out” detail */
-  background-size: 250px, 250px;
+  /* smaller = more repetition = more “border texture” */
+  background-size: 220px, 220px;
 
-  /* repeat creates full border field */
+  /* offset so they intermix instead of stacking cleanly */
+  background-position: 0 0, 110px 110px;
+
   background-repeat: repeat;
-
-  /* shifts patterns so it feels like a surrounding pile */
-  background-position: 0 0, 120px 80px;
 
   opacity: 1;
 
-  /* NO blur, NO washout */
   filter: none;
 
-  /* keep center cutout so it stays a border */
+  /* center cutout stays intact */
   -webkit-mask: radial-gradient(
     circle at center,
     transparent 58%,
