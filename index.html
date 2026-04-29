@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HANDMADE COLOR BACKGROUND ===== */
+/* ===== COLOR FIELD BACKGROUND ===== */
 body::before {
   content: "";
   position: fixed;
@@ -72,7 +72,6 @@ body::after {
   line-height: 1.2;
 }
 
-/* rainbow letters */
 .title span:nth-child(6n+1) { color: red; }
 .title span:nth-child(6n+2) { color: orange; }
 .title span:nth-child(6n+3) { color: gold; }
@@ -113,6 +112,25 @@ body::after {
   transform: rotate(-0.9deg) translateX(25px);
 }
 
+/* ===== GIF STICKER ELEMENT ===== */
+.gif-sticker {
+  margin: 60px auto;
+  width: 260px;
+  max-width: 70%;
+
+  display: block;
+
+  border: 2px solid #000;
+  background: #fffdf7;
+
+  padding: 6px;
+
+  transform: rotate(3deg);
+
+  box-shadow: 0 0 0 2px rgba(255,0,0,0.15),
+              0 0 0 4px rgba(0,255,0,0.10);
+}
+
 /* ===== STAMP ===== */
 .stamp {
   display: inline-block;
@@ -132,7 +150,7 @@ body::after {
   transform: rotate(-0.4deg);
 }
 
-/* ===== NOTE (NOW AT BOTTOM, CLOSING VOICE) ===== */
+/* ===== NOTE ===== */
 .note {
   margin: 60px auto 30px auto;
   max-width: 420px;
@@ -148,7 +166,6 @@ body::after {
   opacity: 0.95;
 }
 
-/* colorful ink wash behind note */
 .note::before {
   content: "";
   position: absolute;
@@ -167,7 +184,6 @@ body::after {
   transform: rotate(1deg);
 }
 
-/* attribution */
 .note span {
   display: block;
   margin-top: 10px;
@@ -183,7 +199,6 @@ a {
   position: relative;
 }
 
-/* marker underline */
 a::after {
   content: "";
   position: absolute;
@@ -213,9 +228,9 @@ a:hover::after {
 <div class="title">
 <span>h</span><span>a</span><span>n</span><span>d</span><span>m</span><span>a</span><span>d</span><span>e</span>
 &nbsp;
-<span>w</span><span>i</span><span>t</span><span>h</span>
+<span>w</span><span>w</span><span>i</span><span>t</span><span>h</span>
 &nbsp;
-<span>b</span><span>r</span><span>i</span><span>g</span><span>h</span><span>t</span>
+<span>b</span><span>r</span><span>i</span><span>g</span><span>h</span><span>t</span><span>e</span><span>s</span><span>t</span>
 &nbsp;
 <span>j</span><span>o</span><span>y</span>
 <br>
@@ -228,6 +243,9 @@ in the hilltowns of western mass
 OR<br>
 THREE FOR 💲25
 </div>
+
+<!-- GIF (NEW COLLAGE OBJECT) -->
+<img class="gif-sticker" src="idontknowher.gif" alt="decorative gif">
 
 <!-- CARDS -->
 <div class="card">
@@ -249,11 +267,11 @@ NO HAGGLING PLEASE, I'M SHY!
 gift boxes available free of charge
 </div>
 
-<!-- NOTE (BOTTOM CLOSING MOMENT) -->
+<!-- NOTE -->
 <div class="note">
 “Pursue the authentic— decide first<br>
 what is authentic,<br>
-then go after it with all your heart”<br>
+then go after it with all your heart”<br><br>
 
 <span>— Louise Erdrich, “Advice To Myself”</span>
 </div>
